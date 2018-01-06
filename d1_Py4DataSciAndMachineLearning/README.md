@@ -1,5 +1,14 @@
 # Python for Data Science and Machine Learning Bootcamp
-A bootcamp that will teach me how to use NumPy, Pandas, Seaborn, Matplotlib, SciKit-Learn, Machine Learning, Tensorflow, and more!
+A small of some Data Science Libraries I'll learn to use
+- NumPy
+- SciKit-Learn
+- SciPy
+- Matplotlib
+- Pandas
+- Plotly
+- Seaborn
+- PySpark
+- and more!
 
 ## Goals:
 - Use Python for Data Science and Machine Learning
@@ -18,3 +27,6 @@ A bootcamp that will teach me how to use NumPy, Pandas, Seaborn, Matplotlib, Sci
 - Natural Language Processing and Spam Filters
 - Neural Networks
 - Support Vector Machines
+
+## Setting up:
+- Seems to be using Jupyter Notebook from Anaconda, so quick Google for that
