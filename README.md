@@ -7,9 +7,8 @@ New Years Resolution: pursue data science and see how far I can go in it this ye
     - https://lagunita.stanford.edu/courses/Engineering/db/2014_1/about
 2. Python for Data Science and Machine Learning Bootcamp
     - https://www.udemy.com/python-for-data-science-and-machine-learning-bootcamp/learn/v4/overview
-3. Essential Statistics for Data Analysis using Excel
-    - Microsoft onlince course
-    - https://courses.edx.org/courses/course-v1:Microsoft+DAT222x+1T2018/course/
+3. Foundations of Data Analysis - Part 1
+    - https://courses.edx.org/courses/course-v1:UTAustinX+UT.7.11x+2T2017/course/
 4. Data Science A-Z™: Real-Life Data Science Exercises
     - https://www.udemy.com/datascience/learn/v4/overview
 
