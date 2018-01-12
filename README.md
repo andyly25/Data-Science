@@ -1,5 +1,6 @@
 # Data-Science
 New Years Resolution: pursue data science and see how far I can go in it this year!
+Will attempt to get a data analyst job first and build from there!
 
 ## Current Goals
 1. Introduction to Databases
