@@ -1,9 +1,21 @@
 # What is this directory about?
 - This directory is where I attempt real analytics examples
-    - data mining
-    - modeling
-    - Tableau visualization
-    - much more!
+- There will be 4 main parts:
+    1. Visualisation
+    2. Modeling
+    3. Data Preparation
+    4. Communication
+- Pathways:
+    1. independent
+    2. Full Monty (go as it's laid out) (I'm going with this one)
+    3. sequential (data prep -> visualiation -> modelling -> presentation)
+    4. The Explorer (Visualisation -> Presentation)
+    5. Modeller (Data prep -> modelling)
+        - for those tasked in daily jobs create models and deploy them
+    6. The senior (visualiation -> modelling -> presentation)
+        - sr. data scientists who has grunts doing data prep for them
+    7. Reporting services (Data prep -> presentation)
+        - getting the data, putting in right place, and present to right people
 
 
 ## develop a good understanding of the following tools:
