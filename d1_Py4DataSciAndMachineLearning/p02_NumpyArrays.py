@@ -87,5 +87,5 @@ arrShape2 = arr16.shape
 arr14.dtype
 
 # instead of always typing random.randint you can
-from nump.random import randint
+from numpy.random import randint
 randomInt = randint(2,10)
