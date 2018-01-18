@@ -1,6 +1,7 @@
 # Introduction to Databases
 - Here's a quick copy and paste of the Stanford course and what it is about from:
     - https://lagunita.stanford.edu/courses/Engineering/db/2014_1/about
+- NOTE: this class was made in Feb. 2012, so some things are outdated but will still be useful references
 
 ## WHY LEARN ABOUT DATABASES
 Databases are incredibly prevalent -- they underlie technology used by most people every day if not every hour.
