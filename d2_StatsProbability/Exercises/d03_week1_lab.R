@@ -1,3 +1,6 @@
+#WEEK 1 LAB
+# RELFECT -> ANALYZE -> DRAW CONCLUSIONS
+
 library(SDSFoundations)
 bike <- BikeData
 
