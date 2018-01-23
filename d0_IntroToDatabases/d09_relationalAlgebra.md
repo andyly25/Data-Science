@@ -3,6 +3,12 @@
     - college(*cName*, state, enrollment)
     - Student(*sID*, sName, GPA, sizeHS)
     - Apply(*sID, cName, major*, decision)
+- simplest query: relation name
+- use operators to filter, slice, combine
+- operators so far:
+    - select, project, cross-product, natural join, theta join
+
+## Relations
 - simplest query: **relation** name (σ <sub>condition</sub> Relation)
     - use operators to filter, slice, combine 
     1. Students with GPA>3.7
@@ -51,3 +57,23 @@
 - Names and GPA of students with HS>1000 who applied to CS at college with enr>20,000 and were rejected
     - π<sub>sName,GPA</sub>(σ<sub>HS>1000 ^ major='cs' ^ dec='R ^ enr>20000'</sub> (Student ∞ (Apply ∞ College)))
 - Exp1 ∞ Exp2 == π<sub>schema(E1) U Schema(E2)(</sub>(σ<sub>E1A1 = E2A1 ^ E1A2=E2A2 ^ ...</sub>)(Exp1 x Exp2))
+
+### Quiz
+- Q3: Which of the following English sentences describes the result of this expression:
+π<sub>sName,cName</sub>(σ<sub>HS>enr</sub>(σ<sub>state=‘CA‘</sub>College⋈Student⋈σ<sub>major=‘CS‘</sub>Apply))
+    - A: Students paired with all California colleges smaller than the student's high school to which the student applied to major in CS 
+        - The inner natural join connects students with the colleges to which they've applied, allowing only California colleges and CS-major applicaitons. The outer selection condition filters out all applications except those where the high school is bigger than the college, and the final projection keeps the student and college names.
+- Q4: Which of the following expressions finds the IDs of all students such that some college bears the student's name?
+    - πsID(College⋈Student)
+    - πsID(σcName=sName(College×Student))
+    - πsID(πcNameCollege⋈πcName(σsName=cNameStudent))
+    - πsID(σcName=sName(πsIDStudent×College×Student)
+    - A: π<sub>sID</sub>(σ<sub>cName=sName</sub>(College×Student))
+        - The first choice returns the IDs of all students in the database. The third choice is invalid because cName is not an attribute of Student. The fourth choice yields all sIDs in Student.
+
+## Theta Join
+- Exp1 ∞\_Θ Exp2 ≡ σ\_θ (Exp1 x Exp2) 
+- Basic operation implemented in DBMS
+- term "join" often means theta join
+    - take two relation, combine all tuples, but only keep combo that pass θ condition
+
