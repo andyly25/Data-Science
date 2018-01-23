@@ -72,7 +72,7 @@
         - The first choice returns the IDs of all students in the database. The third choice is invalid because cName is not an attribute of Student. The fourth choice yields all sIDs in Student.
 
 ## Theta Join
-- Exp1 ∞\_Θ Exp2 ≡ σ\_θ (Exp1 x Exp2) 
+- Exp1 ∞<sub>Θ</sub> Exp2 ≡ σ<sub>Θ</sub> (Exp1 x Exp2) 
 - Basic operation implemented in DBMS
 - term "join" often means theta join
     - take two relation, combine all tuples, but only keep combo that pass θ condition
