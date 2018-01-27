@@ -24,7 +24,7 @@
     - `E₁ ∩ E₂ ≡ E₁ - (E₁ - (E₁ - E₂ ))`
     - `E₁ ∩ E₂ ≡ E₁ ∞ E₂` applies if schema are the same
 - Names that are both a college name and a student name
-    - `π<sub>cName</sub> ∩ π<sub>sName</sub> Student `
+    - π<sub>cName</sub> ∩ π<sub>sName</sub>Student 
 
 ___
 
