@@ -1,4 +1,5 @@
 # Part 2 of Relational Algebra Lecture
+- **Note:** unicode math can't do sub or post with letters...
 - here's the example we've been using
 - example: simple college admission db (italicized are unique ids/keys)
     - college(*cName*, state, enrollment)
@@ -9,11 +10,11 @@
 - Union is denoted as U
     - needs same schema (same attributes, example below doesn't for now)
 - list of college and student names
-    - π\_CName College U π\_SName Student
+    - π<sub>CName</sub> College U π<sub>SName</sub> Student
 
 ## Difference operator (-)
 - IDs of students who didn't apply anywhere
-    -  π\_sID ((π\_sID Student - π\_sID Apply ) ∞ Student)
+    -  π<sub>sID</sub> ((π<sub>sID</sub>Student - π<sub>sID</sub>Apply ) ∞ Student)
     - we grabbed the expression for sID then did a natural join with Student relation
         - called a join back, and now we do projection of student name
 
@@ -23,7 +24,7 @@
     - `E₁ ∩ E₂ ≡ E₁ - (E₁ - (E₁ - E₂ ))`
     - `E₁ ∩ E₂ ≡ E₁ ∞ E₂` applies if schema are the same
 - Names that are both a college name and a student name
-    - `π\_cName ∩ π\_sName Student `
+    - `π<sub>cName</sub> ∩ π<sub>sName</sub> Student `
 
 ___
 
@@ -47,13 +48,39 @@ ___
 
 ## Rename operator (rho ρ)
 - reassigns the schema in the result of E
-1. ρ<sub>R(A₁,...,A\_n)</sub>(E)
+1. ρ<sub>R(A₁,...,A<sub>n</sub>)</sub>(E)
     - general form
 2. ρ<sub>R</sub>(E)
     - if we want to use same attribute names that came from E, but change relation name
-3. ρ<sub>A₁,...,A\_n </sub>
+3. ρ<sub>A₁,...,A<sub>n</sub> </sub>
     - if we want just the attribute names
 - here's an example to unify schemas for set operators
     - List of college and student names
         - this will fix the schemas not matching problem
-        - ρ\_cname (π\_CName College) U ρ\_c(name) (π\_SName Student)
+        - ρ<sub>cname</sub> (π<sub>CName</sub> College) U ρ<sub>c(name)</sub> (π<sub>SName</sub> Student)
+- for disambiguation in self-joins
+    - pairs of colleges in same state (basically college X college)
+    - σ<sub>s₁=s₂</sub>(ρ<sub>c1(n1,s1,e1)</sub>(College) X ρ<sub>c2(n2,s2,e2)</sub>(College))
+        - can do this instead, since we need same attributes, we make both have s
+        - (ρ<sub>c1(n1,s,e1)</sub>(College) ⋈ ρ<sub>c2(n2,s,e2)</sub>(College))
+            - this can give us dupes like: Stanford Stanford
+        - we'll have duplicates so we add in in the front σ<sub>n1≠n2</sub> 
+            - σ<sub>n1≠n2</sub> (ρ<sub>c1(n1,s,e1)</sub>(College) ⋈ ρ<sub>c2(n2,s,e2)</sub>(College))
+            - now problem is Stanford Berkeley, and Berkeley Stanford
+        - simple fix for above is changing ≠ to <
+            - σ<sub>n1<n2</sub> (ρ<sub>c1(n1,s,e1)</sub>(College) ⋈ ρ<sub>c2(n2,s,e2)</sub>(College))
+
+___
+
+## Quiz continued
+- 3. Suppose relation Student has 20 tuples. What is the minimum and maximum number of tuples in the result of this expression:
+    - ρs1(i1,n1,g,h)Student⋈ρs2(i2,n2,g,h)Student
+    - A: minimum = 20, maximum = 400
+        - If every student has a unique GPA-HS combination, then students join only with themselves, and there are 20 tuples in the result (minimum). If every student has the same GPA and HS as every other student, then all pairs join and the result has 20x20=400 tuples.
+- 4. Suppose relations College, Student, and Apply have 5, 20, and 50 tuples in them respectively. Remember that cName is a key for College. Do not assume sName is a key for Student. Do assume that college names in Apply also appear in College. What is the minimum and maximum number of tuples in the result of this expression:
+    - πcNameCollege∪ρcName(πsNameStudent)∪πcNameApply
+    - A: minimum = 5, maximum = 25 
+        - Recall that duplicates are eliminated automatically in relational algebra. If all students have names that are also college names, then there are only 5 names altogether (minimum). If every student has a unique name and none of them are college names, then there are 5+20=25 names altogether (maximum). Since all college names in Apply are also in College, the third term of the expression cannot add any new names.
+
+ 
+
