@@ -36,7 +36,7 @@ ___
     - πsName(πsID,sNameStudent−πsID,sName(Student⋈πsID(σmajor=‘CS‘∨major=‘EE‘Apply)))
     - X πsNameStudent−πsName(Student⋈πsID(σmajor=‘CS‘∨major=‘EEApply))
     - A: If there are two students named Susan, one who did not apply to CS or EE, and one who did, then 'Susan' will correctly be included in the result of the first three expressions, but will incorrectly be omitted from the result of the last one.
- - 2.Which of the following English sentences describes the result of this expression: 
+ - 2. Which of the following English sentences describes the result of this expression: 
 πcNameCollege−πcName(Apply⋈(πsID(σGPA>3.5Student)∩πsID(σmajor=‘CS‘Apply)))
     - All colleges with no GPA>3.5 applicants who applied for a CS major at that college
     - X All colleges with no GPA>3.5 applicants who applied for a CS major at any college
