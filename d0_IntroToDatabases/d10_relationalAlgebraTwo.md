@@ -119,6 +119,8 @@ ___
 ---
 
 ## Quiz
+- **NOTE**: seems like Github requires you to do some extra things to show images
+    - I'll look into it if I remember
 1. X[Q1] Suppose relation R(A,C) has the following tuples:
     - ![q1 img](/images/d10_01.png "q1 image")
     - Compute the natural join of R and S. Which of the following tuples is in the result? Assume each tuple has schema (A,B,C,D).
