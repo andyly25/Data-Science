@@ -82,3 +82,33 @@ Here I'll make some postings on reading comprehension quizzes.
     - Q3 - Q1 = 15-8 = 7
 8. What is the shape of this distribution of scores?
     - approximately normal
+
+___
+## Using Z-Scores
+- z-score = (x-x̄)/SD
+    - **note for self**: I can make x̄ but putting x and '\bar' together
+- Symmetrical distribution -> measure of center=Mean -> Measure of spread=SD
+    - 68% fall bellow 1st SD, 95% between 2nd SD,99.7% for 3rd
+    - this is by negative and positive of the SD
+1. A full‐term baby in the US weighs, on average, 7.5 pounds.  Birth weights are normally distributed, with a standard deviation of 1.1 pounds.  Sketch this distribution and use your sketch to help you answer the following questions.
+    a. 68% of all full-term babies weigh: between 6.4 and 81.1 pounds
+    b. 95% of all full-term babies weigh: between 5.3 and 9.7 pounds 
+    c. 99.7% of all full-term babies weigh: between 4.2 and 10.8 pounds
+2. A distribution has a σ = 4.  Find the z-score for a score that is:
+    a. 4 points above the mean: z = 1
+    b. 12 points above the mean: z = 3
+    c. 2 points below the mean : z = -0.5
+    d. 8 points below the mean: z = -2 
+3. With a height of 75 in., Lyndon Johnson was the tallest president in the 20th century.  Presidents of the past century have heights with a mean of 71.5 in. and a standard deviation of 2.1 in.
+    - With a height of 85 in., Shaquille O’Neal was the tallest player on the Miami Heat basketball team.  Basketball players for the Miami Heat during 2004 to 2008 had heights with a mean of 80.0 in. and a standard deviation of 3.3 in.
+    a. What is the z-score for Lyndon Johnson? (round to 2 dec)
+        - (75-71.5)/2.1 = 1.67
+    b. What is the z-score fro Shaquille O'Neal?
+        - (85-80)/3.3 = 1.52
+    c. Who is relatively taller among their respective groups: Lyndon Johnson or Shaquille O'Neil?
+        - Lyndon Johnson
+4. Which of the following is NOT a characteristic of a Normal Distribution?
+    - X Half the data values are positive, and half the data values are negative.
+    - The center value of the distribution is the mean, median and mode.
+    - The distribution is bell‐shaped and unimodal.
+    - The scores are symmetrical around the mean.
