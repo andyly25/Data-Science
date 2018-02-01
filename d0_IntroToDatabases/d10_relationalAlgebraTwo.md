@@ -82,5 +82,78 @@ ___
     - A: minimum = 5, maximum = 25 
         - Recall that duplicates are eliminated automatically in relational algebra. If all students have names that are also college names, then there are only 5 names altogether (minimum). If every student has a unique name and none of them are college names, then there are 5+20=25 names altogether (maximum). Since all college names in Apply are also in College, the third term of the expression cannot add any new names.
 
- 
+___
 
+## Alternate notation
+- Assignment statements: pair of colleges in same state
+    - C1    := ρ<sub>c1,s,e1</sub> College
+    - C2    := ρ<sub>c2,s,e2</sub> College
+    - CP    := C1 ∞ C2
+    - Ans   := σ<sub>n1<n2</sub> CP
+- Expression tree: GPAs of students applying to CS in CA
+        π<sub>GPA</sub>
+           |
+        σ<sub>state='ca'∩ major='cs'</sub>
+           |
+           ∞
+        /   |   \
+ College Student Apply
+
+ ---
+
+ ## SUmmary
+ - Core:
+    - R: relation name is a query in relational algebra
+        - we'll now use operators that combines and/or filters relations
+    - σ(sigma) is the select operator that applies a condition to result of expression
+    - π(pi): π<sub>A₁...Aₓ</sub>(E) project operator that gives set of attributes that we take from result of expression
+    - (E1) X (E2): cross product
+    - E1 U E2: Union
+    - E1 - E2: difference
+    - ρ(rho): ρ<sub>R(A₁,...,Aₓ)(E)
+- Abbreviations
+    - E1 ∞ E2
+    - E1 ∞<sub>θ</sub> E2 
+    - E1 ∩ E2
+
+---
+
+## Quiz
+1. X[Q1] Suppose relation R(A,C) has the following tuples:
+    - ![q1 img](/images/d10_01.png "q1 image")
+    - Compute the natural join of R and S. Which of the following tuples is in the result? Assume each tuple has schema (A,B,C,D).
+    - A: <s>(7, 1, 5, 8)</s> (2,4,3,9)
+2. [Q2] Suppose relation R(A,B) has the following tuples:
+    - ![q2](/images/d10_02.png "q2 img")
+    - Compute the theta-join of R and S with the condition R.B = S.B AND R.A < S.C Which of the following tuples is in the result? Assume each tuple has schema (A, R.B, S.B, C, D).
+    - A: (4, c, c, 5, 6)
+3. X[Q3] Consider a relation R(A,B) with r tuples, all unique within R, and a relation S(B,C) with s tuples, all unique within S. Let t represent the number of tuples in R natural-join S. Which of the following triples of values (r,s,t) is possible?
+    - A: <s>(3,3,27)</s> (2,10,0)
+4. X[Q4] Consider a relation R(A) with r tuples, all unique within R, and a relation S(A) with s tuples, all unique within S. Let t represent the number of tuples in R minus S. Which of the following triples of values (r,s,t) is possible?
+    - A: <s>(5, 3, 1)</s> (10, 15 ,0)
+5. [Q5] Suppose relation R(A,B) has the following tuples:
+    - ![q5 img](/images/d10_05.png 'q5 img')
+    - Compute the natural join of R and S. Which of the following tuples is in the result? Assume each tuple has schema (A,B,C,D).
+    - (1,2,4,6)
+6. [Q6] Suppose relation R(A,B) has the following tuples: (same img as before)
+    - ![q5 img](/images/d10_05.png 'q5 img')
+    - Compute the theta-join of R and S with the condition R.A < S.C AND R.B < S.D. Which of the following tuples is in the result? Assume each tuple has schema (A, R.B, S.B, C, D).
+    - A: (3, 4, 4, 7, 9)
+7. [Q7] Suppose relation R(A,B,C) has the following tuples:
+    - ![q7](/images/d10_07.png 'q7 img')
+    - Compute the projection π<sub>C,B</sub>(R). Which of the following tuples is in the result?
+    - A: (3,2)
+8. [Q8] Suppose relation R(A,B,C) has the following tuples:
+    - ![q8 img](/images/d10_08.png 'q8 img')
+    - Compute the union of R and S. Which of the following tuples DOES NOT appear in the result?
+    - A: (1,5,4)
+9. [Q9] Suppose relation R(A,B,C) has the following tuples:
+    - ![q8 img](/images/d10_08.png 'q8 img')
+    - Compute the intersection of the relations R and S. Which of the following tuples is in the result?
+    - A: (4,5,6)
+10. [10] Suppose relation R(A,B,C) has the following tuples:
+    - ![q8 img](/images/d10_08.png 'q8 img')
+    - Compute (R - S) union (S - R), often called the "symmetric difference" of R and S. Which of the following tuples is in the result?
+    - A: (4,2,3)
+
+**NOTE: i got a 7/10 on this quiz :(**
