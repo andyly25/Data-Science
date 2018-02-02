@@ -33,3 +33,16 @@
     - Right click Exited, and go into `aliases`
     - I changed 0 to be stayed and 1 to be exited
     - You can drag Exited onto labels to add it under the %
+- if you don't like the ordering of the marks on graph, you can drag and reorder
+    - We moved Exited to be above SUM
+- Adding a *reference line*
+    - if you drag gender off Columns, you'll get the general overview
+        - we'll see 20% overall left, so we'll add reference line for that
+    1. right click the vertical axis and `add a reference line`
+    2. We're doing Line for Entire Table
+    3. For Line we choose `Contant` from drop down menu then typing in 0.20
+- Now let's duplicate the gender sheet and make `Country`
+    - if you drag `Geography` over `Gender` it replaces gender and keeps all settings for Geography
+    - now that we have 3 categories, this isn't an A-B testing anymore (maybe a-b-c or categorical, etc)
+    - we duplicated again and dragged Has Cr Card into Dimensions and replaced Geography
+        - data is pretty much equal, so not good investment of time to pursue
