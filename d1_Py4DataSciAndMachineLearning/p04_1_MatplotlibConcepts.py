@@ -100,7 +100,6 @@ plt.tight_layout()
 fig.savefig('p04_1_pic.png', dpi=200)
 plt.show()
 
-'''
 
 #Here's how we add in a legend
 fig = plt.figure()
@@ -114,3 +113,22 @@ ax.plot(x,x**3, label='x cubed')
 # we use 0 for 'Best', we can also use a tuple for our own location e.g. (0.1,0.1)
 ax.legend(loc='0')
 plt.show()
+
+'''
+
+fig = plt.figure()
+ax = fig.add_axes([0,0,1,1])
+# here's how we use colors, basic colors can use as string, but you might want to use RGB
+# you can use 'lw' instead of linewidth
+# linestyles can use ls there's a lot: step, :, --, -. and etc..
+# marker = o will have a dot for each spot where x meets y
+ax.plot(x,y, color='#FF8C00', linewidth=3, alpha=0.5, linestyle='--', 
+    marker='o', markersize=10, markerfacecolor='red', markeredgewidth=3, markeredgecolor='blue')
+# We can set x and y axis limits
+ax.set_xlim([0,1])
+ax.set_ylim([0,2])
+plt.show()
+
+# go to instructor's notes for a whole bunch of examples
+# 
+# http://www.labri.fr/perso/nrougier/teaching/matplotlib/ is really good resource for matplotlib examples
