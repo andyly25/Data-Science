@@ -98,4 +98,4 @@ ___
 
 Here's my futile attempts at putting into word form first before putting into this ra form
 
-![scratch work](/images/d10_relationalAlgebraScratchPaper.jpg "wow long name scratch work")
+![scratch work](images/d10_relationalAlgebraScratchPaper.jpg "wow long name scratch work")
