@@ -42,17 +42,60 @@ ___
 
 - [Q3] Find all pizzerias that serve at least one pizza for less than $10 that either Amy or Fay (or both) eat. 
 
+```SQL
+\project_{pizzeria}(
+    \select_{price<10} (
+        Serves \join (
+            \project_{pizza}(
+                \select_{name='Amy' or name='Fay'} Eats
+            )
+        )
+    )
+)
+```
+
 
 
 ___
 
 - [Q4] Find all pizzerias that serve at least one pizza for less than $10 that both Amy and Fay eat. 
 
+```SQL
+\project_{pizzeria}(
+    \select_{price<10} (
+        Serves \join (
+            \project_{pizza}(
+                \select_{name1='Amy' and name2='Fay'} (
+                    \rename_{name1, pizza} Eats
+                    \join
+                    \rename_{name2, pizza} Eats
+                )
+            )
+        )
+    )
+)
+```
 
 
 ___
 
 - [Q5] Find the names of all people who eat at least one pizza served by Dominos but who do not frequent Dominos. 
 
+```SQL
+\project_{name}(
+    Eats \join(
+        \select_{pizzeria='Dominos'} Serves
+    )
+)
+\diff 
+\project_{name}(
+    \select_{pizzeria='Dominos'} Frequents
+)
 
+```
 
+___
+
+Here's my futile attempts at putting into word form first before putting into this ra form
+
+![scratch work](/images/d10_relationalAlgebraScratchPaper.jpg "wow long name scratch work")
