@@ -35,7 +35,7 @@ ___
             )
         )
     )
-)
+);
 ```
 
 ___
@@ -51,7 +51,7 @@ ___
             )
         )
     )
-)
+);
 ```
 
 
@@ -73,7 +73,7 @@ ___
             )
         )
     )
-)
+);
 ```
 
 
@@ -90,7 +90,7 @@ ___
 \diff 
 \project_{name}(
     \select_{pizzeria='Dominos'} Frequents
-)
+);
 
 ```
 
@@ -99,3 +99,118 @@ ___
 Here's my futile attempts at putting into word form first before putting into this ra form
 
 ![scratch work](images/d10_relationalAlgebraScratchPaper.jpg "wow long name scratch work")
+
+___
+
+# CHallenge QUestions
+- I'll post the solutions for these to study off later, atm no time to look over
+- [q1] Find all pizzas that are eaten only by people younger than 24, or that cost less than $10 everywhere they're served. 
+
+```SQL
+(\project_{pizza} eats
+\diff
+\project_{pizza}(
+    \select_{age >= 24}
+        person \join eats)
+)
+\union (
+    (\project_{pizza} 
+        \select_{price <= 10} serves
+    ) // pizzas price less than 10
+    \diff
+    (\project_{pizza} 
+        \select_{price > 10} serves)
+    ) // pizzas price larger than 10
+;
+```
+
+___
+
+- [q2] Find the age of the oldest person (or people) who eat mushroom pizza. 
+
+```SQL
+\project_{age} (
+    \select_{pizza = 'mushroom'} (
+        person 
+        \join 
+        eats
+    )
+)
+\diff
+\project_{age} (
+    \select_{ age < age1 } ( // all person has one person older than it
+        \project_{name, age} (
+            \select_{pizza = 'mushroom'} (
+                person 
+                \join 
+                eats)
+        )
+    \join_{ name <> name1 }
+        \rename_{name1, age1} (
+            \project_{name, age} (
+                \select_{pizza = 'mushroom'} (
+                    person 
+                    \join 
+                    eats)
+            )
+        )
+    )
+)
+;
+
+```
+
+___
+
+- [q3] Find all pizzerias that serve **only** pizzas eaten by people over 30. 
+
+```SQL
+\project_{pizzeria} ( // pizzeria serves pizzas eaten by people over 30
+    serves
+        \join (
+            \project_{pizza} (
+                \select_{age > 30} 
+                    person \join eats
+            )
+        )
+)
+\diff
+\project_{pizzeria} ( // pizzeria serves pizzas pizzas eaten other than people over 30
+    serves
+    \join (
+        \project_{pizza} eats
+        \diff
+        \project_{pizza} (
+            \select_{age > 30} 
+                person \join eats
+        )
+    )
+)
+;
+```
+
+___
+
+- [q4] Find all pizzerias that serve **every** pizza eaten by people over 30. 
+
+```SQL
+\project_{pizzeria} \select_{pizza < pizza1} (
+    serves // pizzerias serve any one of pizza eaten by people over 30
+    \join
+    \project_{pizza} (
+        \select_{age > 30} 
+            person \join eats
+    )
+
+    \join
+    \rename_{pizzeria, pizza1, price1} (
+        serves // pizzerias serve any one of pizza eaten by people over 30
+        \join
+        \project_{pizza} (
+            \select_{age > 30} 
+                person \join eats
+        )
+    )
+)
+;
+```
