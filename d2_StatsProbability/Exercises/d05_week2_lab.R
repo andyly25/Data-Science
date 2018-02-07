@@ -118,5 +118,92 @@ sum(adultDog$Weight > 13)
 # more and have  more   variability.
 
 
+#### Exercises
+
+# 1a. What was the most common way that dogs arrived in the shelter? (as defined by the “Intake.Type” variable)
+table(animaldata$Intake.Type)
+## Stray
+
+####### WHOOPS! I did based on animals overall! I'll just list out the answer
+# 1b. What proportion of dogs were brought to the shelter as an owner surrender? (Round to 3 decimal places.)
+129/473
+## 129/473 = 0.273
+## for dogs: 0.278
+
+# 1c. Of the dogs that were brought to the shelter as an owner surrender, how many were returned to their owner?
+ownerSurrender <- animaldata[animaldata$Intake.Type=='Owner Surrender',]
+table(ownerSurrender$Outcome.Type=="Return to Owner")
+## 3
+## for dogs: 2
+
+# 1d. What was the mean number of days that the dogs referenced in Question 1c spent at the shelter before being returned to their owner? (Round to 1 decimal place.)
+ownerReturned <- ownerSurrender[ownerSurrender$Outcome.Type=="Return to Owner",]
+mean(ownerReturned$Days.Shelter)
+## 6.7
+## for dogs: 3.5
+
+# 1e. What would be the correct graph type to show the distribution of dog intake types?
+## bar graph
+
+
+### 2. refer to the image for the frequency table used for these problems
+# 2a. A total of 6 students reported that they worked on the take-home exam for 5 hours or longer. 
+# What is the total number of students that reported their time?
+## x = 6/.15 = 40
+
+# 2b. How many students spent fewer than 3 hours completing the take-home exam?
+## 0.55x40 = 22
+
+# 2c. If the professor wanted to report the center of this distribution, which measure of center should she use?
+## median
+
+# 2d. Which bin inclues the value of Q3?
+## At least 4 hrs, but less than 5 hrs
+
+
+### Question 3
+# Here is a list of ten data values that are sorted from smallest to largest, but five of the data values are missing.  The missing values are represented by A, B, C, D, and E.
+# 2     A     3     B     6     C     9     D     15     E
+# Using the statistics below, find the missing values for the data set.  
+# Mean = 8     Median = 6.5     Mode = 2     Range = 16     IQR = 10
+
+# 3a.
+## A = 2, since mode = 2
+## B = 5, since (75+B)/10 = 8
+## C = 7, since (C+6)/2
+## D = 13, since (D-3)=10
+## E = 18, since range = E-2=16
+
+# 3b. Which of the statistics would change if each value in the dataset were increased by 2?
+## Mean, Median, Mode
+
+# 3c. Which of the statistics would change if each value in the dataset were multiplied by 2?
+## Range, IQR, Mean, Median, Mode
+
+
+### Question 4
+# Suppose that hours of sleep per night for single adults between 30 and 40 years of 
+# age are normally distributed with a mean of 6.7 hours and a standard deviation of 1.1 hours.  
+
+# 4a. If an adult has a z-score of -1.5, how many hours of sleep does this person get per night? (Report to 2 decimal places.)
+## (x-6.7)/1.1 = -1.5 => x = 5.05
+
+# 4b. What proportion of adults sleep longer than 4.5 hours per night? (Report to 3 decimal places.)
+## (4.5-6.7)/1.1 = -2.2, 1 - .0228 = .977
+
+# 4c. What proportion of adults sleep between 5.38 and 8.79 hours of sleep? (Report to 3 decimal places.)
+## (5.38-6.7)/1.1 = -1.2, .1151, 1-.1151 = 0.8849
+## (8.79-6.7)/1.1 = 2.7, .9965
+## .9965-.1151 = 0.8814
+## well let's do by code format
+pnorm(8.79,6.7,1.1) - pnorm(5.38,6.7,1.1)
+# [1] 0.8562138
+## their answer is 0.856
+
+
+
+
+
+
 
 
