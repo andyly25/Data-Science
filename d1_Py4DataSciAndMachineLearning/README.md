@@ -1,6 +1,6 @@
 # Python for Data Science and Machine Learning Bootcamp
 Some Data Science Libraries I'll learn to use
-- NumPy
+- NumPy         (http://www.numpy.org/)
     - Linear Algebra Library for Python
     - fast and has bindings to C libraries
     - we'll use mainly NumPy arrays
@@ -8,10 +8,10 @@ Some Data Science Libraries I'll learn to use
             - vectors are 1-d, matrices are 2-d (can have one row or one col.)
 - SciKit-Learn
 - SciPy
-- Matplotlib
-- Pandas
+- Matplotlib    (https://matplotlib.org/)
+- Pandas        (https://pandas.pydata.org/)
 - Plotly
-- Seaborn
+- Seaborn       (https://seaborn.pydata.org/)
 - PySpark
 - and more!
 
