@@ -46,3 +46,19 @@
     - now that we have 3 categories, this isn't an A-B testing anymore (maybe a-b-c or categorical, etc)
     - we duplicated again and dragged Has Cr Card into Dimensions and replaced Geography
         - data is pretty much equal, so not good investment of time to pursue
+- Last digit of customer ID we:
+    - grab Customer Id and create a calculated field `Right(STR(Customer Id),1)`
+
+
+## RECAP
+1. connect Tableau to Excel file
+2. how to visualize an Ad-Hoc A-B test
+    - ad-hoc: it is used to describe something that has been formed or used for a special and immediate purpose, without previous planning.
+3. How to create Aliases
+4. How to add reference line to your chart
+5. How to use Ad-Hoc A-B tests to find anomalies
+6. How to validate your data/approach
+    - using a column or variable that you know have no influence on result.
+
+**NOTE**: since my pace seems to be a little slow, I might have to speed up and take less notes...
+

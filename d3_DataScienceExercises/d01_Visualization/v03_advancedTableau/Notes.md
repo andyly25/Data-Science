@@ -1,0 +1,39 @@
+**Note:** my notes will be less detailed for now to see if my pace is faster
+# Advanced Tableau
+- Age in col, Number of records in row 
+    - problem, single dot ~390kyears, 10k records
+    - fix age from sum to dimension
+        - note: age doesn't have decimal point so lost some data
+        - we create a bin 5 for age(measure) and it creates an age dimension
+            - get rid of our age col and replace with age(bin)
+            - we get nice bar chart instead of jagged line plot
+            - can edit bins easily, just go age(bin) and edit
+    - remember you press CMD and drag into color and label within Marks section
+- Now we make a duplicate from isActiveMember and drag Age(bin) over and replace in col
+    - drag off text for Exited and we now have nice %
+- If we want two charts on same page
+    - let's drag Number of Records into rows next to previous one
+    - we have a couple new tabs in Marks and can edit all, or separate charts
+    - in our case we try make similar to age distribution
+- Chi Squared test will tell us if a result is a statistical significant result
+    - we'll use this website: http://www.evanmiller.org/ab-testing/chi-squared.html
+        - note can't use percentages, need use actual values
+    - quick change with reference line
+        - y axis add reference line
+            - scope: per cell, value: sum, label: value
+    - Here's the sample when have only 2 categories
+        - ![gender chi square test](genderChiSquareTest.png "gender chi square test")
+        - when validate that chart is good, we can can change color indicate its good in the tabs
+        - ![has credit care](hasCrCardChiSquareTest.png)
+            - shows that our verdict that there's no differences 
+    - Let's try doing with more than 2
+        - We use this website: http://vassarstats.net/newcs.html
+        - let's work with geography
+            - you can view chart as a table by going
+                - show me: table -> transpose
+            - ![countries cst](countriesCST.png "countries cst")
+                - the small p value show statistical significence 
+                    - when go overall population can see overall effect of those living in germany
+            - shortcut is since france and spain are similar we just compare germany with one of the others
+                - still should show similar results
+            - using shortcut, you can apply to age and just do for ages at 50 and 35 to show that age is important
