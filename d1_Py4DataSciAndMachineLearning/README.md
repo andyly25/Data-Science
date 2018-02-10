@@ -1,5 +1,8 @@
 # Python for Data Science and Machine Learning Bootcamp
 Some Data Science Libraries I'll learn to use
+
+**Note**: most of my notes will be on Jupyter Notebook since it actually look quite nice
+
 - NumPy         (http://www.numpy.org/)
     - Linear Algebra Library for Python
     - fast and has bindings to C libraries
