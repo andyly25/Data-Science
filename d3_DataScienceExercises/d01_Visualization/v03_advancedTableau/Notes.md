@@ -47,7 +47,7 @@
 
 ## Chi-Squared
 1. Let's look at gender example again
-    - ![gender table](genderTable)
+    - ![gender table](genderTable.png)
     - if we add up exited it's around 2000, and total customers is ~10k, so that's 20% that left
     - Expected table, if there was no dependency
         - we grabbed 20% total males, and 20% total females for new values
@@ -56,7 +56,7 @@
     - a test designed to test the probability of independence
         - test to see the variable (yes or no) we are looking if it is independent of gender
 3. Example 2
-    - ![credit card table](hasCrCardTable)
+    - ![credit card table](hasCrCardTable.png)
     - if we ran visual test of has cr card and % of total num of records, should show no significant differences so we wouldn't need to run additional tests
 4. Run Chi-Squared Tests in Excel
     - Already included an excel example using chi squared test
@@ -71,4 +71,3 @@
     3. Cannot use %, need absolute values
     4. Categories must be Mutually Exclusive
     5. Never exclude one of the outcomes
-    
