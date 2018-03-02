@@ -14,6 +14,9 @@ Some Data Science Libraries I'll learn to use
 - Matplotlib    (https://matplotlib.org/)
 - Pandas        (https://pandas.pydata.org/)
 - Plotly
+    - Plotly is interactive visualization library
+    - Cufflinks connects plotly with pandas
+    - Site is at: https://plot.ly
 - Seaborn       (https://seaborn.pydata.org/)
 - PySpark
 - and more!

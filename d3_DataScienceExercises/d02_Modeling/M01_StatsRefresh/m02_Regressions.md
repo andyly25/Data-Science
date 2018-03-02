@@ -33,6 +33,7 @@
             - R² = 1 - Sum of Squares residual/ total sum of squares
     - **Adjusted R²**
         - ![Adjusted R Squared](p04_GoodnessFit.png "Image from Kirill Eremenko")
+            - Problem.. if we were to have more variables added in
         - ![Adjusted R Squared](p05_AdjustedRSquared.png "Image from Kirill Eremenko")
         - Adjusted R Squared penalizes you for adding in independent variables that doesn't help the model
         - The adjusted R-Squared is adjusted for the number of predictors in the model
